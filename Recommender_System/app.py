@@ -179,8 +179,8 @@ def recommend(movie):
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
 
-movies = pickle.load(open('Recommender_System/movie.pkl','rb'))
-similarity = pickle.load(open('Recommender_System/similarity.pkl','rb'))
+movies = pickle.load(open('movie.pkl','rb'))
+similarity = pickle.load(open('similarity.pkl','rb'))
 st.title("Movie Recommender System")
 
 selected_movie_name=st.selectbox(
