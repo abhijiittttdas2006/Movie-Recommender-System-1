@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import time
-import os
+#import os
 # redeploy fix
 
 st.markdown("""
@@ -180,11 +180,9 @@ def recommend(movie):
         
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-movies = pickle.load(open(os.path.join(BASE_DIR, 'movie.pkl'), 'rb'))
-
-similarity = pickle.load(open(os.path.join(BASE_DIR, 'similarity.pkl'), 'rb'))
+movies = pickle.load(open('movie.pkl','rb'))
+similarity = pickle.load(open('similarity.pkl','rb'))
 st.title("Movie Recommender System")
 
 selected_movie_name=st.selectbox(
